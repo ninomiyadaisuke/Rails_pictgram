@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   
+  validates :email, uniqueness: true
   #名前の長さに制限を追加する
   validates :name, presence: true, length: {maximum: 15}
   #メールアドレスの正規表現を追加してください
@@ -9,5 +10,6 @@ class User < ApplicationRecord
   validates :password, format: { with: /\A(?=.*?[a-z])(?=.*?[A-Z])(?=.*?\d)[a-zA-Z\d]{8,32}+\z/ }
   has_secure_password
   
+  has_many :topics
   
 end
