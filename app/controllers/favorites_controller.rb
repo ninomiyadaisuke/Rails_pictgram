@@ -21,12 +21,7 @@ class FavoritesController < ApplicationController
     redirect_to topics_path, success: 'お気に入り取り消しました'
   end 
   
-  def show
-    @topic = Topic.find_by(id: params[:id])
-    @user = @topics_path.user
-    # 変数@likes_countを定義
-    @favorites_count = Favorite.where(post_id: @topic.id).count
-  end
+
 
 end
 
