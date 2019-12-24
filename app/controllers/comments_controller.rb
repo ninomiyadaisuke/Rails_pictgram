@@ -12,7 +12,7 @@ class CommentsController < ApplicationController
     if @comment.save
       redirect_to topics_path, success: "投稿に成功しました"
     else 
-      redirect_to topics_path, success: "投稿に失敗しました"
+      redirect_to comments_new_path, danger: "投稿に失敗しました"
     end     
     
   end
